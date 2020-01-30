@@ -31,15 +31,17 @@ public class TestSavingsItemLogic {
 	@Test
 	public void testSavingsItemReplacementCost() {
 		BigDecimal testValue = new BigDecimal (1500.00);
+		BigDecimal testValueCheck = new BigDecimal (1500.00);
 		testItem.setReplacementCost(testValue);
-		assertEquals(testValue, testItem.getReplacementCost());
+		assertTrue(testValueCheck.compareTo(testItem.getReplacementCost()) == 0);
 		}
 	
 	@Test
 	public void testSavingsItemCashBalance() {
 		BigDecimal testBalance = new BigDecimal (500.00);
+		BigDecimal testBalanceCheck = new BigDecimal (500.00);
 		testItem.setCashBalance(testBalance);
-		assertEquals(testBalance, testItem.getCashBalance());
+		assertTrue(testBalanceCheck.compareTo(testItem.getCashBalance()) == 0);
 		}
 
 	@Test
@@ -61,7 +63,7 @@ public class TestSavingsItemLogic {
 		BigDecimal monthlyPaymentsTest = new BigDecimal(100.00);
 		testItem.setMonthsLeft(10);
 		testItem.setBalanceLeft(balanceLeftTest);
-		assertEquals(monthlyPaymentsTest,testLogic.calcMonthlyPayments(testItem));
+		assertTrue(monthlyPaymentsTest.compareTo(testLogic.calcMonthlyPayments(testItem)) == 0);
 		}
 	
 }
